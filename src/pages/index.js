@@ -71,10 +71,17 @@ import SEO from "../components/SEO"
 
 
 const index = () => {
+  const projects =[];
+const blogs = [];
   return (
-    <div>
-      this is index page
-    </div>
+    <Layout>
+      <SEO title="Home" description="this is our home page" />
+      <Hero />
+      <Services />
+      <Jobs />
+      {/* <Projects projects={projects} title="featured projects" showLink /> */}
+      {/* <Blogs blogs={blogs} title="latest articles" showLink /> */}
+    </Layout>
   )
 }
 

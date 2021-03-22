@@ -66,7 +66,7 @@ const getJobs = async () => {
     try {
         const response = await axios(config);
         // console.log(JSON.stringify(response.data));
-        const {data: {data: jobs}} = response;
+        const {data: {data: {jobs}}} = response;
         writeJsonFile(`localDatabase/output/jobs_${new Date().toISOString()}.json`, jobs)
         writeJsonFile(`localDatabase/jobs.json`, jobs)
     } catch (error) {
