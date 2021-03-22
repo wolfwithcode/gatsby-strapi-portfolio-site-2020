@@ -3,9 +3,8 @@ import Title from "./Title"
 import Project from "./Project"
 import { Link } from "gatsby"
 import { getAllProjects } from "../../localDatabase/services"
-const Projects = ({ title, showLink }) => {
-  const projects = getAllProjects();
-  console.log('projects ', projects)
+const Projects = ({projects, title, showLink }) => {
+  
   return (
     <section className="section projects">
       <Title title={title} />

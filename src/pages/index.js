@@ -7,6 +7,7 @@ import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
 import SEO from "../components/SEO"
+import { getAllBlogs, getAllProjects } from "../../localDatabase/services"
 // export default ({ data }) => {
 //   // const {
 //   //   allStrapiProjects: { nodes: projects },
@@ -71,8 +72,9 @@ import SEO from "../components/SEO"
 
 
 const index = () => {
-  const projects =[];
-const blogs = [];
+  const projects = getAllProjects();
+  console.log('projects ', projects)
+const blogs = getAllBlogs();
   return (
     <Layout>
       <SEO title="Home" description="this is our home page" />
@@ -80,7 +82,7 @@ const blogs = [];
       <Services />
       <Jobs />
       <Projects projects={projects} title="featured projects" showLink />
-      {/* <Blogs blogs={blogs} title="latest articles" showLink /> */}
+      <Blogs blogs={blogs} title="latest articles" showLink />
     </Layout>
   )
 }

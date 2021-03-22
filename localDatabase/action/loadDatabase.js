@@ -217,8 +217,58 @@ const getProjects = async () => {
 
 
 
+const getBlogs = async () => {
+  const data = JSON.stringify({
+    query: `
+    query {
+      blogs {
+        id
+        title
+        content
+        image
+        slug
+        category
+        description
+        createdDate
+      }
+    }
+    
+    `,
+    variables: {},
+  })
+
+  const config = {
+    method: "post",
+    url: `${HOST}/graphql`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: data,
+  }
+
+  try {
+    const response = await axios(config)
+    // console.log(JSON.stringify(response.data));
+    const {
+      data: {
+        data: { blogs },
+      },
+    } = response
+    writeJsonFile(
+      `localDatabase/output/blogs_${new Date().toISOString()}.json`,
+      blogs
+    )
+    writeJsonFile(`localDatabase/blogs.json`, blogs)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
 // getLinks();
 // getJobs()
 // getServices();
 // getSiteMetadata();
-getProjects();
+// getProjects();
+getBlogs();
