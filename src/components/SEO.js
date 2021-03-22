@@ -1,6 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
+import { getSiteMetadata } from "../../localDatabase/services"
 
 // const query = graphql`
 //   {
@@ -39,13 +40,21 @@ import { useStaticQuery, graphql } from "gatsby"
 //   )
 // }
 
-
-
 const SEO = () => {
+  const siteMetadata = getSiteMetadata()
+  console.log("siteMetadata", siteMetadata)
+  const { description, siteTitle, siteUrl, image } = siteMetadata
   return (
-    <div>
-      This is SEO
-    </div>
+    <Helmet htmlAttributes={{ lang: "en" }} title={`${siteTitle} | ${siteTitle}`}>
+      <meta name="description" content={description } />
+      <meta name="image" content={image} />
+      {/* twitter cards */}
+      <meta name="twitter:card" content="summary_large_image" />
+      {/* <meta name="twitter:creator" content={twitterUsername} /> */}
+      <meta name="twitter:title" content={siteTitle} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={`${image}`} />
+    </Helmet>
   )
 }
 

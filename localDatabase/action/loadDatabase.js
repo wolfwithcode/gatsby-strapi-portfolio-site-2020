@@ -124,6 +124,49 @@ const getServices = async () => {
   }
 }
 
+
+
+const getSiteMetadata = async () => {
+  const data = JSON.stringify({
+    query: `
+    query {
+      siteMetadata {        
+        key
+        value
+      }
+    }    
+    `,
+    variables: {},
+  })
+
+  const config = {
+    method: "post",
+    url: `${HOST}/graphql`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: data,
+  }
+
+  try {
+    const response = await axios(config)
+    // console.log(JSON.stringify(response.data));
+    const {
+      data: {
+        data: { siteMetadata },
+      },
+    } = response
+    writeJsonFile(
+      `localDatabase/output/siteMetadata_${new Date().toISOString()}.json`,
+      siteMetadata
+    )
+    writeJsonFile(`localDatabase/siteMetadata.json`, siteMetadata)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 // getLinks();
 // getJobs()
-getServices();
+// getServices();
+getSiteMetadata();
