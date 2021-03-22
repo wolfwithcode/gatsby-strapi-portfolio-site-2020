@@ -1,6 +1,7 @@
 import jobs from './jobs.json'
 import services from './services.json'
 import siteMetadataList from './siteMetadata.json';
+import projects from './projects.json'
 
 const siteMetadata = {};
 siteMetadataList.map(item => {
@@ -17,4 +18,9 @@ export const getAllJobs = () => {
 
 export const getAllServices = () => {
     return services;
+}
+
+
+export const getAllProjects = () => {
+    return projects;
 }

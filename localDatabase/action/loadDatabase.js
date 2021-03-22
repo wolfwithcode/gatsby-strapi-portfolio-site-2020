@@ -166,7 +166,59 @@ const getSiteMetadata = async () => {
   }
 }
 
+
+const getProjects = async () => {
+  const data = JSON.stringify({
+    query: `
+    query {
+      projects{
+        id
+        title
+        description
+        image
+        github
+        url
+        featured
+        stacks{
+          title
+        }
+      }
+    }    
+    `,
+    variables: {},
+  })
+
+  const config = {
+    method: "post",
+    url: `${HOST}/graphql`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: data,
+  }
+
+  try {
+    const response = await axios(config)
+    // console.log(JSON.stringify(response.data));
+    const {
+      data: {
+        data: { projects },
+      },
+    } = response
+    writeJsonFile(
+      `localDatabase/output/projects_${new Date().toISOString()}.json`,
+      projects
+    )
+    writeJsonFile(`localDatabase/projects.json`, projects)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
 // getLinks();
 // getJobs()
 // getServices();
-getSiteMetadata();
+// getSiteMetadata();
+getProjects();

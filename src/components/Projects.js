@@ -2,7 +2,10 @@ import React from "react"
 import Title from "./Title"
 import Project from "./Project"
 import { Link } from "gatsby"
-const Projects = ({ projects, title, showLink }) => {
+import { getAllProjects } from "../../localDatabase/services"
+const Projects = ({ title, showLink }) => {
+  const projects = getAllProjects();
+  console.log('projects ', projects)
   return (
     <section className="section projects">
       <Title title={title} />

@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Projects from "../components/Projects"
 import SEO from "../components/SEO"
+import { getAllProjects } from "../../localDatabase/services"
 
 // const ProjectsPage = ({
 //   data: {
@@ -48,6 +49,9 @@ import SEO from "../components/SEO"
 
 
 const projects = () => {
+
+  const projects = getAllProjects();
+  console.log('projects ', projects)
   return (
     <div>
       
