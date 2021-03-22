@@ -32,7 +32,7 @@ const Jobs = () => {
   console.log('jobs ', jobs)
   const [value, setValue] = React.useState(0)
   const { company, position, fromDate, toDate, descriptions } = jobs[value]
-
+  console.log('descriptions ', descriptions)
   return (
     <section className="section jobs">
       <Title title="expierence" />
@@ -42,7 +42,7 @@ const Jobs = () => {
           {jobs.map((item, index) => {
             return (
               <button
-                key={item.strapiId}
+                key={index}
                 onClick={() => setValue(index)}
                 className={`job-btn ${index === value && "active-btn"}`}
               >
@@ -55,15 +55,15 @@ const Jobs = () => {
         <article className="job-info">
           <h3>{position}</h3>
           <h4>{company}</h4>
-          <p className="job-date">{fromDate}</p>
-          {/* {descriptions.map(item => {
+          <p className="job-date">{'\t'+'from'+'\t'+fromDate+'\t'+'to'+'\t'+toDate}</p>
+          {descriptions.map(item => {
             return (
               <div key={item.id} className="job-desc">
                 <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
                 <p>{item.name}</p>
               </div>
             )
-          })} */}
+          })}
         </article>
       </div>
       <Link to="/about" className="btn center-btn">
