@@ -4,40 +4,53 @@ import { graphql } from "gatsby"
 import Blogs from "../components/Blogs"
 import SEO from "../components/SEO"
 
-const Blog = ({
-  data: {
-    allStrapiBlogs: { nodes: blogs },
-  },
-}) => {
+// const Blog = ({
+//   data: {
+//     allStrapiBlogs: { nodes: blogs },
+//   },
+// }) => {
+//   return (
+//     <Layout>
+//       <SEO title="Blog" />
+//       <section className="blog-page">
+//         <Blogs blogs={blogs} title="blog" />
+//       </section>
+//     </Layout>
+//   )
+// }
+
+// export const query = graphql`
+//   {
+//     allStrapiBlogs {
+//       nodes {
+//         slug
+//         desc
+//         date(formatString: "MMMM Do, YYYY")
+//         id
+//         title
+//         category
+//         image {
+//           childImageSharp {
+//             fluid {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
+// export default Blog
+
+
+
+const blog = () => {
   return (
-    <Layout>
-      <SEO title="Blog" />
-      <section className="blog-page">
-        <Blogs blogs={blogs} title="blog" />
-      </section>
-    </Layout>
+    <div>
+      This is a Blog
+    </div>
   )
 }
 
-export const query = graphql`
-  {
-    allStrapiBlogs {
-      nodes {
-        slug
-        desc
-        date(formatString: "MMMM Do, YYYY")
-        id
-        title
-        category
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`
-export default Blog
+export default blog
+

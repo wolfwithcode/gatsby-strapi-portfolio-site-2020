@@ -3,29 +3,32 @@ import Title from "./Title"
 import { FaAngleDoubleRight } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
+import { getAllJobs } from "../../localDatabase/services"
 
-const query = graphql`
-  {
-    allStrapiJobs(sort: { fields: strapiId, order: DESC }) {
-      nodes {
-        strapiId
-        company
-        date
-        position
-        desc {
-          id
-          name
-        }
-      }
-    }
-  }
-`
+// const query = graphql`
+//   {
+//     allStrapiJobs(sort: { fields: strapiId, order: DESC }) {
+//       nodes {
+//         strapiId
+//         company
+//         date
+//         position
+//         desc {
+//           id
+//           name
+//         }
+//       }
+//     }
+//   }
+// `
 
 const Jobs = () => {
-  const data = useStaticQuery(query)
-  const {
-    allStrapiJobs: { nodes: jobs },
-  } = data
+  // const data = useStaticQuery(query)
+  // const {
+  //   allStrapiJobs: { nodes: jobs },
+  // } = data
+
+  const jobs = getAllJobs();
   const [value, setValue] = React.useState(0)
   const { company, position, date, desc } = jobs[value]
 

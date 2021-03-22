@@ -5,8 +5,10 @@ import ReactMarkdown from "react-markdown"
 import SEO from "../components/SEO"
 
 const ComponentName = ({ data }) => {
-  const { content, title, desc } = data.blog
-
+  // const { content, title, desc } = data.blog
+  const content = "";
+  const title = "";
+  const desc = ""
   return (
     <Layout>
       <SEO title={title} description={desc} />
@@ -24,14 +26,14 @@ const ComponentName = ({ data }) => {
   )
 }
 
-export const query = graphql`
-  query GetSingleBlog($slug: String) {
-    blog: strapiBlogs(slug: { eq: $slug }) {
-      content
-      title
-      desc
-    }
-  }
-`
+// export const query = graphql`
+//   query GetSingleBlog($slug: String) {
+//     blog: strapiBlogs(slug: { eq: $slug }) {
+//       content
+//       title
+//       desc
+//     }
+//   }
+// `
 
 export default ComponentName
