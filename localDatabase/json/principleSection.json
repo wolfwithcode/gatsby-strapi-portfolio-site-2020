@@ -1,0 +1,29 @@
+{
+    "id": 1,
+    "title": "Quy trình và nguyên lý hoạt động",
+    "published_at": "2021-03-23T11:12:15.345Z",
+    "created_at": "2021-03-23T11:10:13.849Z",
+    "updated_at": "2021-03-23T11:12:15.381Z",
+    "steps": [
+        {
+            "id": 1,
+            "description": "Ghi nhận những hình ảnh, câu chuyện, các thông tin và manh mối của từng trường hợp để tiến hành so sánh các dữ liệu",
+            "number": "01"
+        },
+        {
+            "id": 2,
+            "description": "Thuật toán của timnguoithan.net sẽ xử lý các hình ảnh, thông tin mô tả liên quan có sự tương đồng theo công nghệ nhận dạng và phân tích khuôn mặt",
+            "number": "02"
+        },
+        {
+            "id": 3,
+            "description": "So sánh và đối chiếu các câu chuyện, thông tin, manh mối bằng công nghệ trí thông minh nhân tạo (AI) dựa trên cơ sở dữ liệu khổng lồ của timnguoithan.net",
+            "number": "03"
+        },
+        {
+            "id": 4,
+            "description": "Sau khi đối chiếu trùng khớp giữa Hồ sơ đăng ký thất lạc và Thông tin được cung cấp bởi những người dùng khác, hệ thống sẽ tiến hành liên hệ các bên để giúp những người thất lạc đoàn tụ với người thân và gia đình",
+            "number": "04"
+        }
+    ]
+}

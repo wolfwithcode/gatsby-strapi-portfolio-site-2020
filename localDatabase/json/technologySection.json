@@ -1,0 +1,34 @@
+{
+    "id": 1,
+    "title": "Giải pháp công nghệ",
+    "description": "Nền tảng tìm người thất lạc nhằm mục đích giúp mọi người tìm kiếm thành viên gia đình, bạn bè hoặc những người thân yêu của họ bằng công nghệ máy học và trí tuệ nhân tạo",
+    "published_at": "2021-03-23T11:06:08.394Z",
+    "created_at": "2021-03-23T11:05:24.455Z",
+    "updated_at": "2021-03-23T11:06:08.430Z",
+    "cards": [
+        {
+            "id": 1,
+            "title": "PHÂN TÍCH KHUÔN MẶT",
+            "description": "Sử dụng thuật toán xử lý hình ảnh để xác định và phân tích điểm tương đồng  giữa các trường hợp bằng công nghệ nhận dạng khuôn mặt",
+            "type": "FACE"
+        },
+        {
+            "id": 2,
+            "title": "KẾT NỐI CÂU CHUYỆN",
+            "description": "Ứng dụng trí tuệ nhân tạo và máy học để đọc hiểu và phân tích câu chuyện của những người đã thất lạc để đối chiếu và so sánh với nhau trong một hệ thống thông tin lớn\n",
+            "type": "STORY"
+        },
+        {
+            "id": 3,
+            "title": "XÁC NHẬN",
+            "description": "Kiểm tra kỹ lưỡng từng trường hợp bởi các thanh tra viên tư nhân để phát hiện những trường hợp thất lạc kéo dài",
+            "type": "CONFIRM"
+        },
+        {
+            "id": 4,
+            "title": null,
+            "description": null,
+            "type": null
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "id": 1,
+    "domain": "TIMNGUOITHAN.NET",
+    "description": "Ứng dụng công nghệ cao dựa trên máy học và trí tuệ nhân tạo để tìm kiếm người thân thất lạc của bạn.",
+    "copyright": "Copyright ©2021 Created by ReUnion",
+    "welcomeMessage": "Tham gia cùng chúng tôi để chung tay kết nối những niềm hạnh phúc thông qua những hành động tưởng chừng là nhỏ bé!",
+    "buttonJoin": "Tham gia ngay",
+    "buttonMoreInfo": "Tìm hiểu thêm",
+    "published_at": "2021-03-23T11:22:06.555Z",
+    "created_at": "2021-03-23T11:22:03.209Z",
+    "updated_at": "2021-03-23T11:25:51.975Z",
+    "cards": [
+        {
+            "id": 1,
+            "title": "Liên hệ với chúng tôi",
+            "texts": [
+                {
+                    "id": 1,
+                    "value": "Số điện thoại: (+84) 0 123 456 789."
+                },
+                {
+                    "id": 2,
+                    "value": "Địa chỉ: 42-44 Võ Thị Sáu, Phường Đa Kao, Quận 1, TP Hồ Chí Minh."
+                },
+                {
+                    "id": 3,
+                    "value": "Giờ hoạt động: 08:00 - 17:00."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Về chúng tôi",
+            "texts": [
+                {
+                    "id": 4,
+                    "value": "Sứ mệnh"
+                },
+                {
+                    "id": 5,
+                    "value": "Giải pháp công nghệ"
+                },
+                {
+                    "id": 6,
+                    "value": "Cách hoạt động"
+                }
+            ]
+        }
+    ]
+}
