@@ -52,9 +52,9 @@ const Jobs = () => {
           <h3>{position}</h3>
           <h4>{company}</h4>
           <p className="job-date">{'\t'+'from'+'\t'+fromDate+'\t'+'to'+'\t'+toDate}</p>
-          {descriptions.map(item => {
+          {descriptions.map((item, index) => {
             return (
-              <div key={item.id} className="job-desc">
+              <div key={index} className="job-desc">
                 <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
                 <p>{item.name}</p>
               </div>
