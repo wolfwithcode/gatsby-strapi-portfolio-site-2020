@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import Services from "../components/Services"
@@ -7,25 +7,40 @@ import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
 import SEO from "../components/SEO"
-import { getAllBlogs, getAllProjects } from "../../localDatabase/services"
-// export default ({ data }) => {
-//   // const {
-//   //   allStrapiProjects: { nodes: projects },
-//   //   allStrapiBlogs: { nodes: blogs },
-//   // } = data
-// const projects =[];
-// const blogs = [];
-//   return (
-//     <Layout>
-//       <SEO title="Home" description="this is our home page" />
-//       <Hero />
-//       <Services />
-//       <Jobs />
-//       <Projects projects={projects} title="featured projects" showLink />
-//       <Blogs blogs={blogs} title="latest articles" showLink />
-//     </Layout>
-//   )
-// }
+
+
+
+export const query = graphql`
+  {
+    allProjectsJson(filter: {featured: {eq: true}}) {
+      nodes {
+        description
+        featured
+        github
+        id
+        image
+        title
+        url
+        stacks {
+          title
+        }
+      }
+    }
+    allBlogsJson(sort: {fields: createdDate, order: ASC}) {
+      nodes {
+        title
+        slug
+        id
+        description
+        createdDate(fromNow: true, formatString: "DD/MM/YY")
+        content
+        image
+        category
+      }
+    }
+  }
+`
+
 // export const query = graphql`
 //   {
 //     allStrapiProjects(filter: { featured: { eq: true } }) {
@@ -70,11 +85,16 @@ import { getAllBlogs, getAllProjects } from "../../localDatabase/services"
 // `
 
 
+const index = ({data}) => {
+  // const projects = getAllProjects()
+  // console.log("projects ", projects)
+  // const blogs = getAllBlogs()
 
-const index = () => {
-  const projects = getAllProjects();
-  console.log('projects ', projects)
-const blogs = getAllBlogs();
+  const {allBlogsJson: {nodes: blogs}} = data;
+  const {allProjectsJson: {nodes: projects}} = data;
+  console.log('blogs   ',blogs);
+  console.log('projects    ',projects);
+  
   return (
     <Layout>
       <SEO title="Home" description="this is our home page" />
