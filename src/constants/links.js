@@ -1,46 +1,28 @@
 import React from "react"
-import { Link } from "gatsby"
-const data = [
-  {
-    id: 1,
-    text: "home",
-    url: "/",
-  },
-  {
-    id: 2,
-    text: "about",
-    url: "/about/",
-  },
-  {
-    id: 3,
-    text: "projects",
-    url: "/projects/",
-  },
-  {
-    id: 4,
-    text: "blog",
-    url: "/blog/",
-  },
-  {
-    id: 5,
-    text: "contact",
-    url: "/contact/",
-  },
-]
+import { Link, graphql, useStaticQuery } from "gatsby"
 
-const tempLinks = data.map(link => {
-  return (
-    <li key={link.id}>
-      <Link to={link.url}>{link.text}</Link>
-    </li>
-  )
-})
-// I KNOW WE CAN COMBINE IT !!!!!
 
+const query = graphql`
+  {
+    allLinksJson {
+      nodes {
+        text
+        url
+        id
+      }
+    }
+  }
+`
 export default ({ styleClass }) => {
+  const data = useStaticQuery(query);
+  // console.log('links data', data);
+  const {allLinksJson: {nodes: links}} = data;
+  console.log('links ', links);
   return (
     <ul className={`page-links ${styleClass ? styleClass : ""}`}>
-      {tempLinks}
+      {links.map((link, index) => ( <li key={link.id}>
+      <Link to={link.url}>{link.text}</Link>
+    </li>) )}
     </ul>
   )
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import Services from "../components/Services"
@@ -10,7 +10,7 @@ import SEO from "../components/SEO"
 
 
 
-export const query = graphql`
+const query = graphql`
   {
     allProjectsJson(filter: {featured: {eq: true}}) {
       nodes {
@@ -40,58 +40,10 @@ export const query = graphql`
     }
   }
 `
+const Index = () => {
 
-// export const query = graphql`
-//   {
-//     allStrapiProjects(filter: { featured: { eq: true } }) {
-//       nodes {
-//         github
-//         id
-//         description
-//         title
-//         url
-//         image {
-//           childImageSharp {
-//             fluid {
-//               ...GatsbyImageSharpFluid
-//             }
-//           }
-//         }
-//         stack {
-//           id
-//           title
-//         }
-//       }
-//     }
-//     allStrapiBlogs(sort: { fields: date, order: DESC }, limit: 3) {
-//       nodes {
-//         slug
-//         content
-//         desc
-//         date(formatString: "MMMM Do, YYYY")
-//         id
-//         title
-//         category
-//         image {
-//           childImageSharp {
-//             fluid {
-//               ...GatsbyImageSharpFluid
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
-
-
-const index = ({data}) => {
-  // const projects = getAllProjects()
-  // console.log("projects ", projects)
-  // const blogs = getAllBlogs()
-
-  const {allBlogsJson: {nodes: blogs}} = data;
-  const {allProjectsJson: {nodes: projects}} = data;
+const data = useStaticQuery(query);
+  const {allBlogsJson: {nodes: blogs}, allProjectsJson: {nodes: projects}} = data;
   console.log('blogs   ',blogs);
   console.log('projects    ',projects);
   
@@ -107,4 +59,4 @@ const index = ({data}) => {
   )
 }
 
-export default index
+export default Index;
