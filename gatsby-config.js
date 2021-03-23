@@ -36,6 +36,14 @@ module.exports = {
     //     singleTypes: [`about`],
     //   },
     // },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'json',
+        path: `./localDatabase/json/`,
+      },
+    },
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
