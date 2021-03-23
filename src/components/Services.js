@@ -1,10 +1,23 @@
 import React from "react"
-import { getAllServices } from "../../localDatabase/services"
 import Title from "./Title"
-import services, { IconsDictionary } from "../constants/services"
+import { IconsDictionary } from "../constants/services"
+import { useStaticQuery } from "gatsby"
+const query = graphql`
+  {
+    allServicesJson {
+      nodes {
+        id
+        title
+        type
+        description
+      }
+    }
+  }
+`
 
 const Services = () => {
-  const services = getAllServices();
+  const data = useStaticQuery(query);
+  const {allServicesJson: {nodes: services}} = data;
   console.log('services ', services)
   return (
     <section className="section bg-grey">

@@ -1,49 +1,29 @@
+import { useStaticQuery } from "gatsby"
 import React from "react"
 import { Helmet } from "react-helmet"
-// import { useStaticQuery, graphql } from "gatsby"
-import { getSiteMetadata } from "../../localDatabase/services"
 
-// const query = graphql`
-//   {
-//     site {
-//       siteMetadata {
-//         author
-//         siteDesc: description
-//         image
-//         siteUrl
-//         siteTitle: title
-//         twitterUsername
-//       }
-//     }
-//   }
-// `
-// const SEO = ({ title, description }) => {
-//   const { site } = useStaticQuery(query)
-//   const {
-//     siteDesc,
-//     siteTitle,
-//     siteUrl,
-//     image,
-//     twitterUsername,
-//   } = site.siteMetadata
-//   return (
-//     <Helmet htmlAttributes={{ lang: "en" }} title={`${title} | ${siteTitle}`}>
-//       <meta name="description" content={description || siteDesc} />
-//       <meta name="image" content={image} />
-//       {/* twitter cards */}
-//       <meta name="twitter:card" content="summary_large_image" />
-//       <meta name="twitter:creator" content={twitterUsername} />
-//       <meta name="twitter:title" content={siteTitle} />
-//       <meta name="twitter:description" content={siteDesc} />
-//       <meta name="twitter:image" content={`${siteUrl}${image}`} />
-//     </Helmet>
-//   )
-// }
+const query = graphql`
+  {
+    jsonJson {
+      metadata {
+        author
+        description
+        heroImg
+        image
+        siteTitle
+        siteUrl
+      }
+    }
+  }
+`
 
 const SEO = () => {
-  const siteMetadata = getSiteMetadata()
-  console.log("siteMetadata", siteMetadata)
-  const { description, siteTitle, siteUrl, image } = siteMetadata
+  const data = useStaticQuery(query);
+  console.log('data ', data)
+  const {jsonJson: {metadata}} = data;
+  // const siteMetadata = getSiteMetadata()
+  console.log("metadata", metadata)
+  const { description, siteTitle, siteUrl, image } = metadata;
   return (
     <Helmet htmlAttributes={{ lang: "en" }} title={`${siteTitle} | ${siteTitle}`}>
       <meta name="description" content={description } />

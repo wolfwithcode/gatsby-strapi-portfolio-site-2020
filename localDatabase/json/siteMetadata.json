@@ -1,26 +1,10 @@
-[
-	{
-		"key": "author",
-		"value": "Anh Le Duc"
-	},
-	{
-		"key": "description",
-		"value": "This is non profit project."
-	},
-	{
-		"key": "image",
-		"value": "https://res.cloudinary.com/dzw5skdae/image/upload/v1616383119/Windows_XP_default_wallpaper_87e36de8a9.jpg"
-	},
-	{
-		"key": "siteUrl",
-		"value": "timnguoithan.net"
-	},
-	{
-		"key": "siteTitle",
-		"value": "timnguoithan"
-	},
-	{
-		"key": "heroImg",
-		"value": "https://res.cloudinary.com/dzw5skdae/image/upload/v1616383119/Windows_XP_default_wallpaper_87e36de8a9.jpg"
+{
+	"metadata":{
+		"author": "Anh Le Duc",
+		"description": "This is non profit project.",
+		"image": "https://res.cloudinary.com/dzw5skdae/image/upload/v1616383119/Windows_XP_default_wallpaper_87e36de8a9.jpg",
+		"siteTitle": "timnguoithan",
+		"siteUrl":  "timnguoithan.net",
+		"heroImg":  "https://res.cloudinary.com/dzw5skdae/image/upload/v1616383119/Windows_XP_default_wallpaper_87e36de8a9.jpg"
 	}
-]
+}

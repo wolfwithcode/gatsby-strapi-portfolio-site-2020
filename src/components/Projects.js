@@ -2,7 +2,7 @@ import React from "react"
 import Title from "./Title"
 import Project from "./Project"
 import { Link } from "gatsby"
-import { getAllProjects } from "../../localDatabase/services"
+// import { getAllProjects } from "../../localDatabase/services"
 const Projects = ({projects, title, showLink }) => {
   
   return (

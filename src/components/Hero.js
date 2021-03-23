@@ -3,7 +3,6 @@ import Image from "gatsby-image"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
 import SocialLinks from "../constants/socialLinks"
-import { getSiteMetadata } from "../../localDatabase/services"
 const query = graphql`
   {
     file(relativePath: { eq: "hero-img.png" }) {

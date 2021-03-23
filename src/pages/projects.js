@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Projects from "../components/Projects"
 import SEO from "../components/SEO"
-import { getAllProjects } from "../../localDatabase/services"
+// import { getAllProjects } from "../../localDatabase/services"
 
 // const ProjectsPage = ({
 //   data: {
@@ -50,11 +50,11 @@ import { getAllProjects } from "../../localDatabase/services"
 
 const projects = () => {
 
-  const projects = getAllProjects();
-  console.log('projects ', projects)
+  // const projects = getAllProjects();
+  // console.log('projects ', projects)
   return (
     <div>
-      
+      This projects page
     </div>
   )
 }
